@@ -6,7 +6,7 @@
 /*   By: mmarinel <mmarinel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/08 15:13:03 by mmarinel          #+#    #+#             */
-/*   Updated: 2022/10/08 15:59:48 by mmarinel         ###   ########.fr       */
+/*   Updated: 2022/10/08 17:00:28 by mmarinel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,19 +43,24 @@ class Array
 		
 		// Destructor
 		~Array() {
-			std::cout << RED << "<<Array Destroyed>>" << std::endl;
+			delete[] this->__array;
+			this->__array = nullptr;
+			this->__size = 0;
+			std::cout << RED << "<<Array Destroyed>>" << RESET << std::endl;
 		}
 		
 		// Operators
 		const Array&	operator=(const Array &assign) {
-			delete[] this->__array;
-			this->__array = new T[copy.__size];
-			this->__size = copy.__size;
+			this->~Array();
+			this->__array = new T[assign.__size];
+			this->__size = assign.__size;
 
 			for (size_t i = 0; i < this->__size; i++)
-				this->__array[i] = copy.__array[i];//* T has overload the '=' for real-deepcopy to happen!
+				this->__array[i] = assign.__array[i];//* T has overload the '=' for real-deepcopy to happen!
+			
+			return (*this);
 		}
-		T&			operator[]( int index ) {
+		T&			operator[]( size_t index ) const {
 			if ( index < 0 || index >= this->__size)
 				throw (std::exception());
 			else
