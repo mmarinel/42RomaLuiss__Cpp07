@@ -1,26 +1,36 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   types.hpp                                          :+:      :+:    :+:   */
+/*   templates.hpp                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mmarinel <mmarinel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/09/19 16:50:40 by mmarinel          #+#    #+#             */
-/*   Updated: 2022/10/04 19:12:22 by mmarinel         ###   ########.fr       */
+/*   Created: 2022/10/08 11:56:42 by mmarinel          #+#    #+#             */
+/*   Updated: 2022/10/08 12:57:14 by mmarinel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef TYPES_H
-#define TYPES_H
+#ifndef TEMPLATES_H
+#define TEMPLATES_H
 
-# include <iostream>
+# include <unistd.h>
 
-typedef struct s_Data
-{
-	const char*	name;//* Clegg
-	const char*	rank;//* Corporal (caporale)
-}	Data;
+template <typename T, typename F>
+void	iter( T* array, size_t len, F map ) {
+	for ( size_t i = 0; i < len; i++ ) {
+		map(array[i]);
+	}
+}
 
-std::ostream&	operator<<( std::ostream& stream, const Data& obj);
+template <typename T>
+void	elDouble( T& el ) {
+	el += el;
+}
 
-#endif /* TYPES_H */
+template <typename T>
+int	elDouble( T& el ) {
+	el += el;
+	return (el);
+}
+
+#endif /* TEMPLATES_H */

@@ -6,34 +6,56 @@
 /*   By: mmarinel <mmarinel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/04 19:01:51 by mmarinel          #+#    #+#             */
-/*   Updated: 2022/10/07 11:49:50 by mmarinel         ###   ########.fr       */
+/*   Updated: 2022/10/08 13:06:11 by mmarinel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-// # include "types.hpp"
 # include "../colors.hpp"
+# include "templates.hpp"
 
 # include <iostream>
 # include <string>
-# include <cstdint>
 
-void	fee(int x) {
-	std::cout << x << std::endl;
-}
+# define TEST_ARRAY_SIZE 4
 
-int	faa(int y) {
-	return (y);
-}
+static void	print_el( int el );
+//* end of static declarations
 
-template <typename T>
-void	foo(T f) {
-	f(11111);
-}
-
-int	main( void )
+int main( void )
 {
-	foo(faa);
-	foo(fee);
+	{	//*...............  INT TESTS.......................//
+	
+	
+		int	array[TEST_ARRAY_SIZE] = {0, 1, 11, 22};
+		
+		std::cout << YELLOW << "\nFIRST TESTS\n" << RESET;
+		iter(array, TEST_ARRAY_SIZE, print_el);
+		std::cout << YELLOW << "\nAFTER TESTS -(doubling with int map)\n" << RESET;
+		iter<int, int(*)(int&)>(array, TEST_ARRAY_SIZE, elDouble<int&>);
+		iter(array, TEST_ARRAY_SIZE, print_el);
+		std::cout << YELLOW << "\nAFTER TESTS -(doubling again with void map)\n" << RESET;
+		iter<int, void(*)(int&)>(array, TEST_ARRAY_SIZE, elDouble<int&>);
+		iter(array, TEST_ARRAY_SIZE, print_el);
+		std::cout << std::endl;
+	}
+	{	//*...............  std::string TESTS.......................//
+	
 
-	return (0);
+		std::string	array[TEST_ARRAY_SIZE] = {"life", "is", "just", "pain"};
+		
+		std::cout << YELLOW << "\nFIRST TESTS\n" << RESET;
+		iter(array, TEST_ARRAY_SIZE, print_el);
+		std::cout << YELLOW << "\nAFTER TESTS -(doubling with int map)\n" << RESET;
+		iter<std::string, std::string(*)(std::string&)>(array, TEST_ARRAY_SIZE, elDouble<std::string&>);
+		// iter(array, TEST_ARRAY_SIZE, print_el);
+		std::cout << YELLOW << "\nAFTER TESTS -(doubling again with void map)\n" << RESET;
+		iter<std::string, std::string(*)(std::string&)>(array, TEST_ARRAY_SIZE, elDouble<std::string&>);
+		// iter(array, TEST_ARRAY_SIZE, print_el);
+		std::cout << std::endl;
+	}
+	return 0;
+}
+
+static void	print_el( int el ) {
+	std::cout << "el: " << el << std::endl;
 }
