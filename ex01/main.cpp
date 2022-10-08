@@ -6,12 +6,13 @@
 /*   By: mmarinel <mmarinel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/04 19:01:51 by mmarinel          #+#    #+#             */
-/*   Updated: 2022/10/08 15:06:11 by mmarinel         ###   ########.fr       */
+/*   Updated: 2022/10/08 19:25:46 by mmarinel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 # include "../colors.hpp"
 # include "templates.hpp"
+# include "Awesome.hpp"
 
 # include <iostream>
 # include <string>
@@ -42,6 +43,17 @@ int main( void )
 		std::cout << YELLOW << "\nAFTER TESTS -(doubling with int map)\n" << RESET;
 		iter(array, TEST_ARRAY_SIZE, elDouble<std::string>);
 		iter(array, TEST_ARRAY_SIZE, print_el<std::string>);
+		std::cout << std::endl;
+	}
+	{	//*.............. Correction Sheet tests ....................//
+
+		int	tab[] = {0, 1, 2, 3, 4};
+
+		Awesome	tab2[5];
+
+		iter(tab, 5, print<int>);
+		iter(tab2, 5, print<Awesome>);
+
 		std::cout << std::endl;
 	}
 	return 0;
