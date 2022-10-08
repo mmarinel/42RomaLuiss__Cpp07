@@ -6,7 +6,7 @@
 /*   By: mmarinel <mmarinel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/08 11:56:42 by mmarinel          #+#    #+#             */
-/*   Updated: 2022/10/08 12:57:14 by mmarinel         ###   ########.fr       */
+/*   Updated: 2022/10/08 15:02:51 by mmarinel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,7 @@
 #define TEMPLATES_H
 
 # include <unistd.h>
+# include <iostream>
 
 template <typename T, typename F>
 void	iter( T* array, size_t len, F map ) {
@@ -23,14 +24,14 @@ void	iter( T* array, size_t len, F map ) {
 }
 
 template <typename T>
-void	elDouble( T& el ) {
+T	elDouble( T& el ) {
 	el += el;
+	return (el);
 }
 
 template <typename T>
-int	elDouble( T& el ) {
-	el += el;
-	return (el);
+void	print_el( T el ) {
+	std::cout << el << std::endl;
 }
 
 #endif /* TEMPLATES_H */
