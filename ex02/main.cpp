@@ -6,7 +6,7 @@
 /*   By: mmarinel <mmarinel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/08 15:41:54 by mmarinel          #+#    #+#             */
-/*   Updated: 2022/10/08 17:26:44 by mmarinel         ###   ########.fr       */
+/*   Updated: 2022/10/08 18:16:43 by mmarinel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -161,6 +161,12 @@ int main( void )
 		delete [] mirror;//
 	}
 	
+	std::cout << std::endl << YELLOW << "Testing subscript operator with const object" << RESET << std::endl;
+	const Array<int> a = Array<int>(5);
+
+	std::cout << a[0] << std::endl;
+	// a[0] = 1;
+	std::cout << a[0] << std::endl;
 	std::cout << std::endl;
 	return 0;
 }

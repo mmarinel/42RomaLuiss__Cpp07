@@ -6,7 +6,7 @@
 /*   By: mmarinel <mmarinel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/08 15:13:03 by mmarinel          #+#    #+#             */
-/*   Updated: 2022/10/08 17:53:24 by mmarinel         ###   ########.fr       */
+/*   Updated: 2022/10/08 18:08:43 by mmarinel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,7 +32,8 @@ class Array
 		
 		//* Operators
 		const Array&	operator=(const Array &assign);
-		T&			operator[]( size_t index ) const;
+		const T&			operator[]( size_t index ) const;
+		T&					operator[]( size_t index );
 		
 		//* Getters / Setters
 		size_t	size() const;

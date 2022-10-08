@@ -6,7 +6,7 @@
 /*   By: mmarinel <mmarinel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/08 17:44:32 by mmarinel          #+#    #+#             */
-/*   Updated: 2022/10/08 17:51:22 by mmarinel         ###   ########.fr       */
+/*   Updated: 2022/10/08 18:11:45 by mmarinel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,15 @@ size_t	Array<T>::size() const {
 }
 
 template <typename T>
-T&			Array<T>::operator[]( size_t index ) const {
+T&			Array<T>::operator[]( size_t index ) {
+	if ( index < 0 || index >= this->__size)
+		throw (std::exception());
+	else
+		return (this->__array[index]);
+}
+
+template <typename T>
+const T&			Array<T>::operator[]( size_t index ) const {
 	if ( index < 0 || index >= this->__size)
 		throw (std::exception());
 	else
