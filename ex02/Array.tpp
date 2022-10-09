@@ -1,17 +1,17 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Array.cpp                                          :+:      :+:    :+:   */
+/*   Array.tpp                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mmarinel <mmarinel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/08 17:44:32 by mmarinel          #+#    #+#             */
-/*   Updated: 2022/10/08 18:11:45 by mmarinel         ###   ########.fr       */
+/*   Updated: 2022/10/09 18:06:57 by mmarinel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef ARRAY_CPP
-# define ARRAY_CPP
+#ifndef ARRAY_TPP
+# define ARRAY_TPP
 
 # include "Array.hpp"
 

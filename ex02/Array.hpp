@@ -6,7 +6,7 @@
 /*   By: mmarinel <mmarinel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/08 15:13:03 by mmarinel          #+#    #+#             */
-/*   Updated: 2022/10/08 18:08:43 by mmarinel         ###   ########.fr       */
+/*   Updated: 2022/10/09 18:06:22 by mmarinel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,6 +47,6 @@ class Array
 template <typename T>
 std::ostream&	operator<<(std::ostream& stream, const Array<T>& array);
 
-# include "Array.cpp"
+# include "Array.tpp"
 
 #endif

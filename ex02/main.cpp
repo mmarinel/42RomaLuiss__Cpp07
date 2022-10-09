@@ -6,7 +6,7 @@
 /*   By: mmarinel <mmarinel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/08 15:41:54 by mmarinel          #+#    #+#             */
-/*   Updated: 2022/10/08 18:16:43 by mmarinel         ###   ########.fr       */
+/*   Updated: 2022/10/09 18:30:49 by mmarinel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -125,11 +125,14 @@ int main( void )
 			numbers[i] = value;
 			mirror[i] = value;
 		}
+		std::cout << std::endl;
 		//* SCOPE
 		{
 			Array<int> tmp = numbers;
 			Array<int> test(tmp);
+			std::cout << std::endl;
 		}
+		std::cout << std::endl;
 		for (int i = 0; i < MAX_VAL; i++)
 		{
 			if (mirror[i] != numbers[i])
@@ -159,14 +162,16 @@ int main( void )
 			numbers[i] = rand();
 		}
 		delete [] mirror;//
+		std::cout << std::endl;
 	}
+	{
+		std::cout << std::endl << YELLOW << "Testing subscript operator with const object" << RESET << std::endl;
+		const Array<int> a = Array<int>(5);
 	
-	std::cout << std::endl << YELLOW << "Testing subscript operator with const object" << RESET << std::endl;
-	const Array<int> a = Array<int>(5);
-
-	std::cout << a[0] << std::endl;
-	// a[0] = 1;
-	std::cout << a[0] << std::endl;
+		std::cout << "a[0] = " << a[0] << std::endl;
+		// a[0] = 1;//! doing this will not compile !
+		std::cout << "a[0] = "  << a[0] << std::endl;
+	}
 	std::cout << std::endl;
 	return 0;
 }
