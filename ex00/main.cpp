@@ -6,7 +6,7 @@
 /*   By: mmarinel <mmarinel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/27 16:59:30 by mmarinel          #+#    #+#             */
-/*   Updated: 2022/10/08 19:16:15 by mmarinel         ###   ########.fr       */
+/*   Updated: 2022/10/09 17:51:00 by mmarinel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,6 +26,7 @@ int	main ( void ) {
 		std::cout << "a = " << a << ", b = " << b << std::endl;
 		std::cout << "min( a, b ) = " << ::min( a, b ) << std::endl;
 		std::cout << "max( a, b ) = " << ::max( a, b ) << std::endl;
+		//*...........................................................*//
 		std::string c = "chaine1";
 		std::string d = "chaine2";
 		::swap(c, d);
@@ -41,9 +42,9 @@ int	main ( void ) {
 
 		swap(a, b);
 		
-		std::cout << a << " " << b << std::endl;
-		std::cout << max(a, b) << std::endl;
-		std::cout << min(a, b) << std::endl;
+		std::cout << "Awesome a = "  << a << ", Awesome b = " << b << std::endl;
+		std::cout << "max( a, b ) = "  << max(a, b) << std::endl;
+		std::cout << "min( a, b ) = "  << min(a, b) << std::endl;
 		std::cout << std::endl;
 	}
 	return 0;

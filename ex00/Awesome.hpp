@@ -6,7 +6,7 @@
 /*   By: mmarinel <mmarinel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/08 19:03:47 by mmarinel          #+#    #+#             */
-/*   Updated: 2022/10/08 19:17:15 by mmarinel         ###   ########.fr       */
+/*   Updated: 2022/10/09 17:45:59 by mmarinel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,24 +19,24 @@
 class Awesome
 {
 	public:
-		Awesome( void ) : __n(0) {}
-		Awesome( int n ) : __n(n) {}
+		Awesome( void );
+		Awesome( int n );
 
-		Awesome & operator=(Awesome& a) {__n = a.__n; return *this; }
+		Awesome & operator=(Awesome& a);
 
-		bool	operator==( Awesome const & rhs ) const { return (this->__n == rhs.__n);}
-		bool	operator!=( Awesome const & rhs ) const { return (this->__n != rhs.__n);}
-		bool	operator>( Awesome const & rhs ) const { return (this->__n > rhs.__n);}
-		bool	operator<( Awesome const & rhs ) const { return (this->__n < rhs.__n);}
-		bool	operator>=( Awesome const & rhs ) const { return (this->__n >= rhs.__n);}
-		bool	operator<=( Awesome const & rhs ) const { return (this->__n <= rhs.__n);}
+		bool	operator==( Awesome const & rhs ) const;
+		bool	operator!=( Awesome const & rhs ) const;
+		bool	operator>( Awesome const & rhs ) const;
+		bool	operator<( Awesome const & rhs ) const;
+		bool	operator>=( Awesome const & rhs ) const;
+		bool	operator<=( Awesome const & rhs ) const;
 
-		int	get_n() const { return __n; }
+		int	get_n() const;
 
 	private:
 		int	__n;
 };
 
-std::ostream&	operator<<(std::ostream& o, const Awesome& a) { o << a.get_n(); return (o);}
+std::ostream&	operator<<(std::ostream& o, const Awesome& a);
 
 #endif /* AWESOME_H */
