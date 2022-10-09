@@ -6,7 +6,7 @@
 /*   By: mmarinel <mmarinel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/04 19:01:51 by mmarinel          #+#    #+#             */
-/*   Updated: 2022/10/08 19:25:46 by mmarinel         ###   ########.fr       */
+/*   Updated: 2022/10/09 17:58:14 by mmarinel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,6 +47,8 @@ int main( void )
 	}
 	{	//*.............. Correction Sheet tests ....................//
 
+		std::cout << YELLOW << "\nCorrection Sheet tests\n" << RESET;
+		
 		int	tab[] = {0, 1, 2, 3, 4};
 
 		Awesome	tab2[5];

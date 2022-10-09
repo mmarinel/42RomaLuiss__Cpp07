@@ -1,35 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Awesome.hpp                                        :+:      :+:    :+:   */
+/*   Awesome.cpp                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mmarinel <mmarinel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/10/08 19:17:06 by mmarinel          #+#    #+#             */
-/*   Updated: 2022/10/09 17:56:32 by mmarinel         ###   ########.fr       */
+/*   Created: 2022/10/09 17:53:12 by mmarinel          #+#    #+#             */
+/*   Updated: 2022/10/09 17:56:02 by mmarinel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef AWESOME_H
-#define AWESOME_H
+# include "Awesome.hpp"
 
-# include <iostream>
-# include <fstream>
+//*...... Constructor
+Awesome::Awesome( void ) : __n(42) {}
 
-class Awesome
-{
-	public:
-		Awesome( void );
+//*........ Getters and Setters
+int	Awesome::get( void ) const {
+	return (this->__n);
+}
 
-		int	get( void ) const;
+//*.......... Operators
+std::ostream&	operator<<( std::ostream& o, Awesome const & rhs ) {
+	o << rhs.get();
 
-	private:
-		int	__n;
-};
-
-std::ostream&	operator<<(std::ostream& o, Awesome const & rhs);
-
-template <typename T>
-void	print( T const & x) { std::cout << x << std::endl; return; }
-
-#endif /* AWESOME_H */
+	return (o);
+}
